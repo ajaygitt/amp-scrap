@@ -36,4 +36,14 @@ router.post("/getResponse", (req, res) => {
     console.log("errr",error)
   }
 });
+
+router.get('/protek',(req,res)=>{
+
+  return res.render("protek");
+})
+
+router.post('/protek',(req,res)=>{
+
+  return res.render("protek-post")
+})
 module.exports = router;
