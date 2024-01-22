@@ -1,0 +1,237 @@
+
+<table style="width:100%;">
+  <tr style="width:100%">
+    <td class="lblhd" nowrap>Order Number</td>
+    <td class="lblhd" nowrap>Product</td>
+    <td class="lblhd" nowrap>Property Address</td>
+    <td class="lblhd" nowrap>Fee</td>
+    <td class="lblhd" nowrap>Due Date</td>
+    <td class="lblhd" nowrap>Accept/Decline</td>
+    <td class="lblhd" nowrap>Engagement Letter</td>
+    <td class="lblhd" nowrap>Map</td>
+  </tr>
+  <tr>
+    <td Class="lblhd" nowrap>453317621</td>
+    <td Class="ms_text" nowrap>BPO Exterior 5 Day</td>
+    <td Class="lbltxt" nowrap>11711 CROFTON RD , GARFIELD HEIGHTS, 44125</td>
+    <td Class="lbltxt" style="color red; font-weight: bold;" nowrap>35.00</td>
+    <td Class="lbltxt" style="color red; font-weight: bold;" nowrap>12/3/2023</td>
+    <td Class="lbltxt" nowrap>
+      <select id="accept_order|75085902" name="accept_order|75085902" onchange="display_info(this, '75085902')">
+        <option value="-1"></option>
+        <option value="1">Accept</option>
+        <option value="2">Conditionally Accept</option>
+        <option value="2">Fee Change Request</option>
+        <option value="3">Cannot Meet Due Date</option>
+        <option value="4">Decline</option>
+      </Select>
+    </td>
+    <td Class="lbltxt" nowrap>
+      <a href="javascript: openletter('https://ss.propertysmart.us/modules/open_file.aspx?type=order&uid=256d5d60-1be8-4bf6-bf60-6691b93b2444&fname=Engagement_Letter_Adam Bradford.htm')">vendor partner letter Of engagement</a>
+    </td>
+    <td Class="lbltxt" nowrap>
+      <a href="javascript: openmap('subject_map.gif','256d5d60-1be8-4bf6-bf60-6691b93b2444')">map</a>
+    </td>
+  </tr>
+  <tr id="message_info|75085902" style="display: none;">
+    <td colspan="8" valign="top" Class="lblhd_10">*Enter In the requested information And press save To decline the order. The order will be removed from your pending assignments.</td>
+  </tr>
+  <tr id="conditional_accept_info|75085902" style="display: none;">
+    <td colspan="9" valign="top">
+      <table border="0" style="width: 100%">
+        <tr>
+          <td Class="lbltxt" valign="top">Estimated Completion Date:&nbsp; <input type="text" id="dte_estimated_completion|75085902" name="dte_estimated_completion|75085902" value="12/3/2023" size="10">
+          </td>
+          <td Class="lbltxt" valign="top" id="td_inspection_date_75085902">Inspection Date:&nbsp; <input type="text" id="dte_inspection_75085902" name="dte_inspection_75085902" value="" size="10" readonly>
+            <Select id="dte_inspection_hr|75085902" name="dte_inspection_hr|75085902" onchange="addtime('75085902')">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <Select id="dte_inspection_min|75085902" name="dte_inspection_min|75085902" onchange="addtime('75085902')">
+              <option value="">
+              </Option>
+              <option value="00">00 </Option>
+              <option value="05">05 </Option>
+              <option value="10">10 </Option>
+              <option value="15">15 </Option>
+              <option value="20">20 </Option>
+              <option value="25">25 </Option>
+              <option value="30">30 </Option>
+              <option value="35">35 </Option>
+              <option value="40">40 </Option>
+              <option value="45">45 </Option>
+              <option value="50">50 </Option>
+              <option value="55">55 </Option>
+            </select>
+            <Select id="dte_inspection_period|75085902" name="dte_inspection_period|75085902" onchange="addtime('75085902')">
+              <option value="AM" selected>AM </Option>
+              <option value="PM">PM </Option>
+            </select>
+            <input type="hidden" id="dte_inspection_time|75085902" name="dte_inspection_time|75085902" value="">
+          </td>
+          <td Class="lbltxt" valign="top" id="td_requested_fee|75085902" style="display: none;">Requested Fee:&nbsp; <input type="text" id="requested_fee|75085902" name="requested_fee|75085902" value="35.00" size="10">
+          </td>
+          <td Class="lbltxt" valign="top" align="right" id="td_reasons|75085902" style="display: none;">Include Reasons for fee And/ Or due date conditions:&nbsp;</td>
+          <td Class="lbltxt" valign="top" id="td_comments|75085902" style="display: none;">
+            <textarea id="comments|75085902" name="comments|75085902" cols="50" rows="5"></textarea>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr id="decline_reason_area|75085902" name="decline_reason_area|75085902" style="display: none;">
+    <td colspan="8" valign="top">
+      <Table border="0">
+        <tr>
+          <td Class="lbltxt" valign="top">Decline Reason </td>
+          <td Class="lbltxt" valign="top">
+            <Select id="decline_reason|75085902" name="decline_reason|75085902" onchange="fn_decline_reason(this, '75085902')">
+              <Option value="-1" selected></Option>
+              <Option value="2">At Capacity</Option>
+              <Option value="3">Out Of Office</Option>
+              <Option value="4">Out Of Coverage Area</Option>
+            </Select>
+          </td>
+          <td Class="lbltxt" valign="top" id="return_date_area|75085902" style="display: none;">
+            <label id="lbl_return_date|75085902">Out Of Office Return Date:</label>&nbsp; <input type="text" id="return_date_75085902" name="return_date_75085902" value="" size="10">
+            <a href="javascript: showCalendar('return_date_75085902', 0)">
+              <img src="/images/icon_calendar.gif" border="0" alt=" width=" 15" height="15">
+            </a>
+          </td>
+          <td class="lbltxt" valign="top" align="right" id="td_decline_reasons|75085902" style="display: none;">Send a Message to SingleSource/Order Detail Decline Comments&nbsp;</td>
+          <td Class="lbltxt" valign="top" id="td_decline_comments|75085902" style="display: none;">
+            <textarea id="decline_comments|75085902" name="decline_comments|75085902" cols="50" rows="5"></textarea>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr id="coverage_message_info|75085902" style="display: none;">
+    <td colspan="8" valign="top" Class="lblhd_10">By selecting Out Of Coverage Area For this order, you authorize this zip code To be permanently removed from your coverage area. You will Not receive any further orders In this area.</td>
+  </tr>
+  <input type="hidden" id="hid_zip_75085902" name="hid_zip_75085902" value="44125">
+  <input type="hidden" id="hid_order_number_75085902" name="hid_order_number_75085902" value="453317621">
+  <input type="hidden" id="hid_customer_id_75085902" name="hid_customer_id_75085902" value="4406">
+  <tr>
+    <td Class="lblhd" nowrap>453317645</td>
+    <td Class="ms_text" nowrap>BPO Exterior 5 Day</td>
+    <td Class="lbltxt" nowrap>3710 Pennington Rd. , Shaker Hts., 44120</td>
+    <td Class="lbltxt" style="color red; font-weight: bold;" nowrap>35.00</td>
+    <td Class="lbltxt" style="color red; font-weight: bold;" nowrap>12/3/2023</td>
+    <td Class="lbltxt" nowrap>
+      <select id="accept_order|75085983" name="accept_order|75085983" onchange="display_info(this, '75085983')">
+        <option value="-1"></option>
+        <option value="1">Accept</option>
+        <option value="2">Conditionally Accept</option>
+        <option value="2">Fee Change Request</option>
+        <option value="3">Cannot Meet Due Date</option>
+        <option value="4">Decline</option>
+      </Select>
+    </td>
+    <td Class="lbltxt" nowrap>
+      <a href="javascript: openletter('https://ss.propertysmart.us/modules/open_file.aspx?type=order&uid=48115ed8-e5fe-45e9-9d2a-526252a7bec2&fname=Engagement_Letter_Adam Bradford.htm')">vendor partner letter Of engagement</a>
+    </td>
+    <td Class="lbltxt" nowrap>
+      <a href="javascript: openmap('subject_map.gif','48115ed8-e5fe-45e9-9d2a-526252a7bec2')">map</a>
+    </td>
+  </tr>
+  <tr id="message_info|75085983" style="display: none;">
+    <td colspan="8" valign="top" Class="lblhd_10">*Enter In the requested information And press save To decline the order. The order will be removed from your pending assignments.</td>
+  </tr>
+  <tr id="conditional_accept_info|75085983" style="display: none;">
+    <td colspan="9" valign="top">
+      <table border="0" style="width: 100%">
+        <tr>
+          <td Class="lbltxt" valign="top">Estimated Completion Date:&nbsp; <input type="text" id="dte_estimated_completion|75085983" name="dte_estimated_completion|75085983" value="12/3/2023" size="10">
+          </td>
+          <td Class="lbltxt" valign="top" id="td_inspection_date_75085983">Inspection Date:&nbsp; <input type="text" id="dte_inspection_75085983" name="dte_inspection_75085983" value="" size="10" readonly>
+            <Select id="dte_inspection_hr|75085983" name="dte_inspection_hr|75085983" onchange="addtime('75085983')">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <Select id="dte_inspection_min|75085983" name="dte_inspection_min|75085983" onchange="addtime('75085983')">
+              <option value="">
+              </Option>
+              <option value="00">00 </Option>
+              <option value="05">05 </Option>
+              <option value="10">10 </Option>
+              <option value="15">15 </Option>
+              <option value="20">20 </Option>
+              <option value="25">25 </Option>
+              <option value="30">30 </Option>
+              <option value="35">35 </Option>
+              <option value="40">40 </Option>
+              <option value="45">45 </Option>
+              <option value="50">50 </Option>
+              <option value="55">55 </Option>
+            </select>
+            <Select id="dte_inspection_period|75085983" name="dte_inspection_period|75085983" onchange="addtime('75085983')">
+              <option value="AM" selected>AM </Option>
+              <option value="PM">PM </Option>
+            </select>
+            <input type="hidden" id="dte_inspection_time|75085983" name="dte_inspection_time|75085983" value="">
+          </td>
+          <td Class="lbltxt" valign="top" id="td_requested_fee|75085983" style="display: none;">Requested Fee:&nbsp; <input type="text" id="requested_fee|75085983" name="requested_fee|75085983" value="35.00" size="10">
+          </td>
+          <td Class="lbltxt" valign="top" align="right" id="td_reasons|75085983" style="display: none;">Include Reasons for fee And/ Or due date conditions:&nbsp;</td>
+          <td Class="lbltxt" valign="top" id="td_comments|75085983" style="display: none;">
+            <textarea id="comments|75085983" name="comments|75085983" cols="50" rows="5"></textarea>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr id="decline_reason_area|75085983" name="decline_reason_area|75085983" style="display: none;">
+    <td colspan="8" valign="top">
+      <Table border="0">
+        <tr>
+          <td Class="lbltxt" valign="top">Decline Reason </td>
+          <td Class="lbltxt" valign="top">
+            <Select id="decline_reason|75085983" name="decline_reason|75085983" onchange="fn_decline_reason(this, '75085983')">
+              <Option value="-1" selected></Option>
+              <Option value="2">At Capacity</Option>
+              <Option value="3">Out Of Office</Option>
+              <Option value="4">Out Of Coverage Area</Option>
+            </Select>
+          </td>
+          <td Class="lbltxt" valign="top" id="return_date_area|75085983" style="display: none;">
+            <label id="lbl_return_date|75085983">Out Of Office Return Date:</label>&nbsp; <input type="text" id="return_date_75085983" name="return_date_75085983" value="" size="10">
+            <a href="javascript: showCalendar('return_date_75085983', 0)">
+              <img src="/images/icon_calendar.gif" border="0" alt=" width=" 15" height="15">
+            </a>
+          </td>
+          <td class="lbltxt" valign="top" align="right" id="td_decline_reasons|75085983" style="display: none;">Send a Message to SingleSource/Order Detail Decline Comments&nbsp;</td>
+          <td Class="lbltxt" valign="top" id="td_decline_comments|75085983" style="display: none;">
+            <textarea id="decline_comments|75085983" name="decline_comments|75085983" cols="50" rows="5"></textarea>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr id="coverage_message_info|75085983" style="display: none;">
+    <td colspan="8" valign="top" Class="lblhd_10">By selecting Out Of Coverage Area For this order, you authorize this zip code To be permanently removed from your coverage area. You will Not receive any further orders In this area.</td>
+  </tr>
+  <input type="hidden" id="hid_zip_75085983" name="hid_zip_75085983" value="44120">
+  <input type="hidden" id="hid_order_number_75085983" name="hid_order_number_75085983" value="453317645">
+  <input type="hidden" id="hid_customer_id_75085983" name="hid_customer_id_75085983" value="4406">
+</table>
