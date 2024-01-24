@@ -62,4 +62,10 @@ router.post('/protek',(req,res)=>{
 
   return res.render("protek-post")
 })
+
+//swbc counter
+router.get('/swbc-counter',(req,res)=>{
+
+  return res.render('swbc-counter')
+})
 module.exports = router;
