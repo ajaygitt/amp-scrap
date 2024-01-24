@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatted SMS Body</title>
+</head>
+<body>
+
+<script>
+    // Sample JSON data
+    var jsonData = [
+        {
+            "body": "\r\n\r\n\r\n________________________________________\r\nFrom: 74454@sendsmsto.me <74454@sendsmsto.me>\r\nSent: Monday, January 15, 2024 12:13:50 PM (UTC-05:00) Eastern Time (US & Canada)\r\nTo: bangecesis@gmail.com; Max Cobey\r\nSubject: SMS From 74454 to 15136094001\r\n\r\nYour verification code is 424491.\r\n\r\n-- \r\nYou received this message because you are subscribed to the Google Groups \"Ecesis\" group.\r\nTo unsubscribe from this group and stop receiving emails from it, send an email to ecesismails+unsubscribe@ecesistech.com.\r\n\r\n",
+            "status": "Ok",
+            "comment": "",
+            "content_type": "text/plain",
+            "parent_contenttype": "text/plain"
+        }
+    ];
+
+    // Function to format and display the SMS body
+    function formatAndDisplayBody() {
+        var bodyContent = jsonData[0].body;
+
+        // Replace line breaks with <br>
+        bodyContent = bodyContent.replace(/\r\n/g, '<br>');
+
+        // Convert email addresses to mailto links
+        bodyContent = bodyContent.replace(/(\S+@\S+\.\S+)/g, '<a href="mailto:$1">$1</a>');
+
+        // Convert URLs to clickable links
+        bodyContent = bodyContent.replace(/(https?:\/\/\S+)/g, '<a href="$1" target="_blank">$1</a>');
+
+        // Create a div element and set its innerHTML
+        var formattedBody = document.createElement('div');
+        formattedBody.innerHTML = bodyContent;
+
+        // Append the formatted body to the document body
+        document.body.appendChild(formattedBody);
+    }
+
+    // Call the function to format and display the SMS body
+    formatAndDisplayBody();
+</script>
+
+</body>
+</html>

@@ -37,7 +37,7 @@ router.post("/getResponse", (req, res) => {
     logger.info(logMessage);
   
 
-    if (acceptOrderValue=="1") {
+    if (acceptOrderValue=="2") {
       //counter
      return res.render('singlesource_after_counter')
 
