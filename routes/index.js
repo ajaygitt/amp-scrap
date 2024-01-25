@@ -72,4 +72,7 @@ router.get('/swbc-counter',(req,res)=>{
 router.get('/swbc-login',(req,res)=>{
   return res.render('swbc-login')
 })
+router.post('/swbc-login',(req,res)=>{
+  return res.render('swbc_before_counter')
+})
 module.exports = router;
