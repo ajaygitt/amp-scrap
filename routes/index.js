@@ -75,4 +75,24 @@ router.get('/swbc-login',(req,res)=>{
 router.post('/swbc-login',(req,res)=>{
   return res.render('swbc_before_counter')
 })
+
+// decline swbc 
+router.get('/swbc-counter-before',(req,res)=>{
+
+  return res.render('swbc-counter-before')
+})
+router.post('/Orders/{}/Items/{}/Decline',(req,res)=>{
+
+  return res.render('swbc-counter-out')
+})
+
+// class validation portal
+
+router.get('/cv-counter',(req,res)=>{
+  return res.render('classValuation')
+})
+
+router.post('/cv-counter-out',(req,res)=>{
+  return res.render('classValuationOut')
+})
 module.exports = router;
