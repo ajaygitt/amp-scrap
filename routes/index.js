@@ -81,7 +81,7 @@ router.get('/swbc-counter-before',(req,res)=>{
 
   return res.render('swbc-counter-before')
 })
-router.post('/Orders/{}/Items/{}/Decline',(req,res)=>{
+router.post('/swbc-counter-before/Orders/:id/Items/:name/Decline',(req,res)=>{
 
   return res.render('swbc-counter-out')
 })
