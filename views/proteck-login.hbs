@@ -1,0 +1,163 @@
+<body>
+    <header id="pre-header" class="">
+        <div id="header">
+            <div class="container">
+                <div class="row">
+                    <div id="logosmall" class="col-md-9">
+                        <a href="https://swbcls-vendors.clearvalueconsulting.com/Account/Login?ReturnUrl=%2F#">
+                            <img src="./SWBCLogin_files/logo.jpg" alt="About SWBC Lending Solutions">
+                        </a>
+                    </div>
+                    <div class="col-md-3 zero-padding-top zero-padding-bottom">
+                        <h5 style="margin-top: 0px; font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;">Acuity Vendor Portal</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <section id="body">
+        <!-- Content -->
+        <section id="content">
+                                    
+
+<style>
+	.g-recaptcha {
+		display: inline-block;
+	}
+</style>
+
+		<div class="container form-horizontal" style="margin-top: 20px;">
+			<form id="frmLogin" method="post">
+				<input name="__RequestVerificationToken" type="hidden" value="8IqPPM1n1rS1xBgazv5a9aZYDExc5LIURjFOGnC4ivVcQv6POtlJQrrnsHFUTuaSVTmN8RKPSsbG5gDaAkdjsYZmvHY1">
+				<input id="ReCAPTCHAModel_V2Response" name="ReCAPTCHAModel.V2Response" type="hidden" value="">
+				<input id="ReCAPTCHAModel_V3Response" name="ReCAPTCHAModel.V3Response" type="hidden" value="">
+				<section class="col-md-8">
+
+						<div class="form-group">
+							<div class="alert alert-warning" id="portalWarningDiv">
+								<strong>Notice!</strong> Please note our privacy policy at <a href="https://www.swbc.com/privacy-policy" target="_blank">https://www.swbc.com/privacy-policy</a> and for California residents at <a href="https://www.swbc.com/privacy-disclosure-for-california-residents" target="_blank">https://www.swbc.com/privacy-disclosure-for-california-residents</a>
+							</div>
+						</div>
+
+					<div class="form-group" style="color: red;">
+						<div class="col-md-offset-2 col-md-10">
+							<div class="validation-summary-valid" id="validationSummary"><ul><li style="display:none"></li>
+</ul></div>
+						</div>
+					</div>
+					<div class="form-group">
+	<label class="control-label col-md-2" for="Username">Vendor ID:</label>
+	<div class="controls col-md-5">
+		<div class="input-group">
+			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+			<input class="form-control" id="Username" name="Username" onchange="if (this.setCustomValidity) this.setCustomValidity(&#39;&#39;);" oninput="if (this.setCustomValidity) this.setCustomValidity(&#39;&#39;);" oninvalid="if (this.setCustomValidity) {    if (this.validity.valueMissing) {        this.setCustomValidity(&#39;Username is required.&#39;);		    return;    }}" required="required" type="text" value="">
+		</div>
+	</div>
+</div>
+
+					<div class="form-group">
+	<label class="control-label col-md-2" for="Password">Password:</label>
+	<div class="controls col-md-5">
+		<div class="input-group">
+			<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+			<input class="form-control" id="Password" name="Password" onchange={submitProteck} oninput="if (this.setCustomValidity) this.setCustomValidity(&#39;&#39;);" oninvalid="if (this.setCustomValidity) {    if (this.validity.valueMissing) {        this.setCustomValidity(&#39;Password is required.&#39;);		    return;    }}" required="required" type="password" value="">
+		</div>
+	</div>
+</div>
+
+					<div class="form-group">
+						<div class="col-md-7 text-right">
+
+							<button id="submitLogin" name="singlebutton" type="submit" class="btn btn-default" onclick="onLogin(); return false;">Login</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-7 text-right">
+							<a href="https://swbcls-vendors.clearvalueconsulting.com/Account/ForgotPassword">Forgot password?</a>&nbsp;
+						</div>
+					</div>
+				</section>
+			</form>
+		</div>
+
+
+<script>
+
+    function submitProteck(){
+alert("d")
+        window.location.href='/proteck-dashboard'
+    }
+    $(document).ready(function () {
+
+
+    });
+
+    function toggleSubmit()
+    {
+        if ($('#checkAcceptLoginTnC').is(':checked')) {
+            $("#submitLogin").prop('disabled', false);
+        } else {
+            $("#submitLogin").prop('disabled', true);
+        }
+    }
+
+    function onSubmit(token) {
+		document.getElementById("ReCAPTCHAModel_V2Response").value = token;
+	}
+
+	function onLogin() {
+	window.location.href='/proteck-dashboard'
+	}
+
+</script>
+        </section>
+        <!-- #content -->
+    </section>
+    <!-- #Main Content -->
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+
+                <!-- widget -->
+                <div class="col-md-8 widget widget_text">
+                    <h4 class="section-title">About SWBC Lending Solutions<span></span></h4>
+                    <p>
+                        Headquartered in San Antonio, SWBC is a diversified financial services company which provides a wide range of insurance, mortgage, and investment services to financial institutions, businesses, and individuals. With offices across the country, we are committed to providing quality products, outstanding service, and customized solutions in all 50 states.
+                    </p>
+                </div>
+
+                <!-- widget -->
+                <div class="col-md-4 widget widget_contact">
+                    <h4 class="section-title">Contact Info<span></span></h4>
+                    <address>
+                        <ul>
+                            <li><i class="glyphicon glyphicon-home" style="padding-right: 10px;"></i><strong>Address:</strong> 9311 San Pedro Avenue, Suite 600, San Antonio, TX, 78216</li>
+                            <li><i class="glyphicon glyphicon-phone" style="padding-right: 10px;"></i><strong>Telephone:</strong> (949) 930-8435</li>
+                            <li><i class="glyphicon glyphicon-envelope" style="padding-right: 10px;"></i><strong>E-mail:</strong> <a href="mailto:valuations@swbc.com">valuations@swbc.com</a></li>
+                            <li><i class="glyphicon glyphicon-globe" style="padding-right: 10px;"></i><strong>Website:</strong> <a href="https://www.swbc.com/lending-solutions">https://www.swbc.com/lending-solutions</a></li>
+                        </ul>
+                    </address>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">Copyright © 2024 ClearValue Consulting Inc. <span>/</span> All Rights Reserved</div>
+                    <div class="col-md-4 hidden-phone"><a href="https://swbcls-vendors.clearvalueconsulting.com/Account/Login?ReturnUrl=%2F#" id="go-top">Go to Top</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- #copyright -->
+
+    </footer>
+    <!-- #footer -->
+
+    
+    
+    
+</body>

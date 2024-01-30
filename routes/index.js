@@ -63,6 +63,17 @@ router.post('/protek',(req,res)=>{
   return res.render("protek-post")
 })
 
+// proteck dashboard and login
+router.get('/proteck-login',(req,res)=>{
+
+  return res.render('proteck-login')
+})
+
+router.get('/proteck-dashboard',(req,res)=>{
+
+  return res.render('proteck-dashboard')
+})
+
 //swbc counter
 router.get('/swbc-counter',(req,res)=>{
 
