@@ -1,0 +1,367 @@
+<body>
+
+    <header id="pre-header" class="">
+
+        <div id="header">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div id="logosmall" class="col-md-9">
+
+                        <a href="#">
+
+                            <img src="https://www.classvaluation.com/wp-content/uploads/2018/10/ClassValuation-logo-SM.png" alt="About Class Valuation" />
+
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-3 zero-padding-top zero-padding-bottom">
+
+                        <h5 style="margin-top: 0px; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Acuity Vendor Portal</h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Main Content -->
+
+    <section id="body">
+
+        <!-- Content -->
+
+        <section id="content">
+
+                                    
+
+
+
+<style>
+
+	.g-recaptcha {
+
+		display: inline-block;
+
+	}
+
+</style>
+
+
+
+		<div class="container form-horizontal" style="margin-top: 20px;">
+
+			<form id="frmLogin" method="post">
+
+				<input name="__RequestVerificationToken" type="hidden" value="4unD_TXGSvaS3xssiyjsaVxtGh1U_wp5uKTwjF0iJAJDyAWdkJgIzXsK9ykx1pXySsYh9_UoLw7LWttSh_JqdCE7clQ1" />
+
+				<input id="ReCAPTCHAModel_V2Response" name="ReCAPTCHAModel.V2Response" type="hidden" value="" />
+
+				<input id="ReCAPTCHAModel_V3Response" name="ReCAPTCHAModel.V3Response" type="hidden" value="" />
+
+				<section class="col-md-8">
+
+
+
+						<div class="form-group">
+
+							<div class="alert alert-warning" id="portalWarningDiv">
+
+								<strong>Notice!</strong> Please see Terms and Conditions
+
+							</div>
+
+						</div>
+
+
+
+					<div class="form-group" style="color: red;">
+
+						<div class="col-md-offset-2 col-md-10">
+
+							<div class="validation-summary-valid" id="validationSummary"><ul><li style="display:none"></li>
+
+</ul></div>
+
+						</div>
+
+					</div>
+
+					<div class="form-group">
+
+	<label class="control-label col-md-2" for="Username">Vendor ID:</label>
+
+	<div class="controls col-md-5">
+
+		<div class="input-group">
+
+			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+			<input class="form-control" id="Username" name="Username" onchange="if (this.setCustomValidity) this.setCustomValidity(&#39;&#39;);" oninput="if (this.setCustomValidity) this.setCustomValidity(&#39;&#39;);" oninvalid="if (this.setCustomValidity) {    if (this.validity.valueMissing) {        this.setCustomValidity(&#39;Username is required.&#39;);		    return;    }}" required="required" type="text" value="" />
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+					<div class="form-group">
+
+	<label class="control-label col-md-2" for="Password">Password:</label>
+
+	<div class="controls col-md-5">
+
+		<div class="input-group">
+
+			<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+
+			<input class="form-control" id="Password" name="Password" onchange="if (this.setCustomValidity) this.setCustomValidity(&#39;&#39;);" oninput="if (this.setCustomValidity) this.setCustomValidity(&#39;&#39;);" oninvalid="if (this.setCustomValidity) {    if (this.validity.valueMissing) {        this.setCustomValidity(&#39;Password is required.&#39;);		    return;    }}" required="required" type="password" value="" />
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+						<div class="form-group">
+
+							<div class="col-md-7 text-right">
+
+								<input id="checkAcceptLoginTnC" name="checkAcceptLoginTnC" type="checkbox" value="true" /><input name="checkAcceptLoginTnC" type="hidden" value="false" />
+
+								<span class="checkbox-label" style="margin-top: 0px;">I accept the <a target="_blank" href="https://cv-terms-and-conditions.s3.us-east-2.amazonaws.com/TC+Acuity.pdf">Terms and Conditions</a></span>
+
+							</div>
+
+						</div>
+
+					<div class="form-group">
+
+						<div class="col-md-7 text-right">
+
+
+
+							<button id="submitLogin" name="singlebutton" type="submit" class="btn btn-default" onclick="onLogin(); return false;">Login</button>
+
+						</div>
+
+					</div>
+
+					<div class="form-group">
+
+						<div class="col-md-7 text-right">
+
+							<a href="/Account/ForgotPassword">Forgot password?</a>&nbsp;
+
+						</div>
+
+					</div>
+
+				</section>
+
+			</form>
+
+		</div>
+
+
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+
+
+        
+
+        $("#checkAcceptLoginTnC").click(function (e) {
+
+            toggleSubmit();
+
+        });
+
+
+
+        toggleSubmit();
+
+        
+
+
+
+    });
+
+
+
+    function toggleSubmit()
+
+    {
+
+        if ($('#checkAcceptLoginTnC').is(':checked')) {
+
+            $("#submitLogin").prop('disabled', false);
+
+        } else {
+
+            $("#submitLogin").prop('disabled', true);
+
+        }
+
+    }
+
+
+
+    function onSubmit(token) {
+
+		document.getElementById("ReCAPTCHAModel_V2Response").value = token;
+
+	}
+
+
+
+	function onLogin() {
+
+		if (false) {
+
+			grecaptcha.ready(function () {
+
+				try {
+
+					grecaptcha.execute('', { action: 'VendorPortalLogin' }).then(function (token) {
+
+						$('#frmLogin').find('#ReCAPTCHAModel_V3Response').val(token);
+
+						$('#frmLogin').submit();
+
+					});
+
+				}
+
+				catch{
+
+					$('#frmLogin').submit();
+
+				}
+
+			});
+
+		}
+
+		else {
+
+			$('#frmLogin').submit();
+
+		}
+
+	}
+
+
+
+</script>
+
+        </section>
+
+        <!-- #content -->
+
+    </section>
+
+    <!-- #Main Content -->
+
+    <!-- Footer -->
+
+    <footer id="footer">
+
+        <div class="container">
+
+            <div class="row">
+
+
+
+                <!-- widget -->
+
+                <div class="col-md-8 widget widget_text">
+
+                    <h4 class="section-title">About Class Valuation<span></span></h4>
+
+                    <p>
+
+                        Class Valuation, formerly Class Appraisal, is a top 10 nationwide Appraisal Management Company (AMC), delivering outstanding quality and service to each and every client. We are committed to combining the best people, products, processes, and technology available to help our clients be successful. Our goal: to best serve our clients through continual innovation of the appraisal process.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- widget -->
+
+                <div class="col-md-4 widget widget_contact">
+
+                    <h4 class="section-title">Contact Info<span></span></h4>
+
+                    <address>
+
+                        <ul>
+
+                            <li><i class="glyphicon glyphicon-home" style="padding-right: 10px;"></i><strong>Address:</strong> 2600 Bellingham Dr #100, Troy, MI, 48083</li>
+
+                            <li><i class="glyphicon glyphicon-phone" style="padding-right: 10px;"></i><strong>Telephone:</strong> 248-955-9422</li>
+
+                            <li><i class="glyphicon glyphicon-envelope" style="padding-right: 10px;"></i><strong>E-mail:</strong> <a href="mailto:visupport@classvaluation.com">visupport@classvaluation.com</a></li>
+
+                            <li><i class="glyphicon glyphicon-globe" style="padding-right: 10px;"></i><strong>Website:</strong> <a href="http://www.classvaluation.com">http://www.classvaluation.com</a></li>
+
+                        </ul>
+
+                    </address>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+        <div id="copyright">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-8">Copyright &copy; 2024 ClearValue Consulting Inc. <span>/</span> All Rights Reserved</div>
+
+                    <div class="col-md-4 hidden-phone"><a href="#" id="go-top">Go to Top</a></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- #copyright -->
+
+
+
+    </footer>
+
+    <!-- #footer -->
+
+
+
+    
+
+    </body>

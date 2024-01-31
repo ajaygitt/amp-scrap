@@ -106,4 +106,13 @@ router.get('/cv-counter',(req,res)=>{
 router.post('/cv-counter-out',(req,res)=>{
   return res.render('classValuationOut')
 })
+
+router.get('/cv-before-login',(req,res)=>{
+  return res.render('classvaluationBeforeLogin')
+})
+
+router.post('/classValuation/Orders/:id/Items/:name/Decline',(req,res)=>{
+  return res.render('cv-out')
+})
+
 module.exports = router;
